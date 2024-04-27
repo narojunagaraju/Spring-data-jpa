@@ -76,31 +76,37 @@ class StudentRepositoryTest {
 
     @Test
     public void printStudentByFirstNameAndLastName() {
-        Student student = studentRepository.findByFirstNameAndLastName("nagaraju","naroju");
-        System.out.println("Student is = "+student);
+        Student student = studentRepository.findByFirstNameAndLastName("nagaraju", "naroju");
+        System.out.println("Student is = " + student);
     }
 
     @Test
     public void printGetStudentByEmailAddress() {
         Student student = studentRepository.getStudentByEmailAddress("nagaraju@gmail.com");
-        System.out.println("Student is = "+student);
+        System.out.println("Student is = " + student);
     }
 
     @Test
     public void printGetStudentFirstNameByEmailAddress() {
         String studentFirstName = studentRepository.getStudentFirstNameByEmailAddress("nagaraju@gmail.com");
-        System.out.println("Student firstName is = "+studentFirstName);
+        System.out.println("Student firstName is = " + studentFirstName);
     }
 
     @Test
     public void printGetStudentByEmailAddressNative() {
         Student student = studentRepository.getStudentByEmailAddressNative("nagaraju@gmail.com");
-        System.out.println("Student is = "+student);
+        System.out.println("Student is = " + student);
     }
 
     @Test
     public void printGetStudentByEmailAddressNativeQueryParam() {
         Student student = studentRepository.getStudentByEmailAddressNativeNamedParam("nagaraju@gmail.com");
-        System.out.println("Student is = "+student);
+        System.out.println("Student is = " + student);
+    }
+
+    @Test
+    public void updateStudentNameByEmailId() {
+        int count = studentRepository.updateStudentNameByEmailId("Nagaraj", "nagaraju@gmail.com");
+        System.out.println("Affected rows " + count);
     }
 }
