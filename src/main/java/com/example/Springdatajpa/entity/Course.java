@@ -26,4 +26,10 @@ public class Course {
     private String title;
     private Integer credit;
 
+    //This is bidirectional one to one mapping. here "course" is what we defined in Course Material.
+    @OneToOne(
+            mappedBy = "course"
+    )
+    private CourseMaterial courseMaterial;
+
 }
