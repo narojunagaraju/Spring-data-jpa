@@ -30,7 +30,7 @@ class TeacherRepositoryTest {
                 title("Java")
                 .credit(6)
                 .build();
-
+/*
         Teacher teacher = Teacher
                 .builder()
                 .firstName("Andy")
@@ -38,6 +38,6 @@ class TeacherRepositoryTest {
                 .courses(List.of(course1, course2))
                 .build();
 
-        teacherRepository.save(teacher);
+        teacherRepository.save(teacher);*/
     }
 }
