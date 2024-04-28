@@ -28,7 +28,8 @@ public class CourseMaterial {
     //Fetch type lazy means course will be loaded only if you ask for it.
     @OneToOne(
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            optional = false
     )
     @JoinColumn(
             name = "course_id",
