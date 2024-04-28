@@ -2,16 +2,14 @@ package com.example.Springdatajpa.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString(exclude = "course")
 public class CourseMaterial {
     @Id
     @SequenceGenerator(
@@ -27,8 +25,10 @@ public class CourseMaterial {
     private String url;
 
     //Cascading allows you to store Parent object in db first and child after the parent.
+    //Fetch type lazy means course will be loaded only if you ask for it.
     @OneToOne(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     @JoinColumn(
             name = "course_id",
